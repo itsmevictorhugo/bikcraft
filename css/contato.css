@@ -96,3 +96,8 @@
 .contato_dados ul li a:hover {
   border-color: #000;
 }
+
+/* Mapa */
+.contato_mapa {
+  margin-bottom: 60px;
+}
