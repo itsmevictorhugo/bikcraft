@@ -15,12 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/grid.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/produtos.css">
-    <link rel="stylesheet" href="/css/responsivo.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script>document.documentElement.classList.add('js');</script>
   </head>
   <body>
@@ -54,7 +49,7 @@
         <h2>Passeio</h2>
       </div>
       <div class="grid-5 produto_icone">
-        <img src="img/produtos/passeio.svg" >
+        <img src="img/produtos/passeio.svg" alt="Icone Passeio">
       </div>
       <div class="grid-8">
         <img src="img/produtos/bikcraft-passeio-2.jpg" alt="Bikcraft Passeio">
@@ -76,7 +71,7 @@
         <h2>Esporte</h2>
       </div>
       <div class="grid-5 produto_icone">
-        <img src="img/produtos/esporte.svg" >
+        <img src="img/produtos/esporte.svg" alt="Icone Esporte">
       </div>
       <div class="grid-8">
         <img src="img/produtos/bikcraft-esporte-2.jpg" alt="Bikcraft Esporte">
@@ -98,7 +93,7 @@
         <h2>Retro</h2>
       </div>
       <div class="grid-5 produto_icone">
-        <img src="img/produtos/retro.svg" >
+        <img src="img/produtos/retro.svg" alt="Icone Retro">
       </div>
       <div class="grid-8">
         <img src="img/produtos/bikcraft-retro-2.jpg" alt="Bikcraft Retro">
@@ -117,17 +112,23 @@
     <section class="orcamento">
       <div class="container">
         <h2 class="subtitulo">Orçamento</h2>
-        <form id="form_orcamento" class="form grid-8" >
-          <label for="nome">Nome</label>
-          <input type="text" id="nome">
-          <label for="email">E-mail</label>
-          <input type="text" id="email">
-          <label for="telefone">Telefone</label>
-          <input type="text" id="telefone">
-          <label for="mensagem">Especificações</label>
-          <textarea id="espec"></textarea>
-          <button type="submit" class="btn">Enviar</button>
-        </form>
+				<form id="form_orcamento" method="POST" action="./enviar.php" class="form grid-8 formphp">
+					<label for="nome">Nome</label>
+					<input type="text" id="nome" name="nome" required>
+					<label for="email">E-mail</label>
+					<input type="email" id="email" name="email" required>
+					<label for="telefone">Telefone</label>
+					<input type="text" id="telefone" name="telefone">
+
+					<label class="nao-aparece">Se você não é um robô, deixe em branco.</label>
+					<input type="text" class="nao-aparece" name="leaveblank">
+					<label class="nao-aparece">Se você não é um robô, não mude este campo.</label>
+					<input type="text" class="nao-aparece" name="dontchange" value="http://">
+
+					<label for="mensagem">Mensagem</label>
+					<textarea id="mensagem" name="mensagem" required></textarea>
+					<button id="enviar" name="enviar" type="submit" class="btn">Enviar</button>
+				</form>
         <div class="orcamento_dados grid-8">
           <h3>Dados</h3>
           <span>+55 21 03223 3232</span>
@@ -146,12 +147,12 @@
     </section>
 
     <!-- Quebra -->
-    <section class="quebra">
+    <div class="quebra">
       <blockquote class="quote-externo container">
         <p>"o verdadeireo segredo da felicidade está em ter um genuíno  interesse por todos os detalhes da vida cotidiana."</p>
         <cite>WILLIAM MORRIS</cite>
       </blockquote>
-    </section>
+    </div>
     <!-- Footer -->
     <footer>
       <div class="footer">
