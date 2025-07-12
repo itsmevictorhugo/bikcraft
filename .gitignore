@@ -1,2 +1,3 @@
 *.php
 PHPMailer
+sendgrid-php
